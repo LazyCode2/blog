@@ -18,4 +18,4 @@ highlight_code = true
   [extra.profiles.Lazy]
   avatar = "https://i.pinimg.com/736x/67/7b/70/677b70b5d51adccb65796e8131ce54dd.jpg"
   name = "Lazy Developer"
-  bio = "Hi! I am Lazy developer. I write some random stuff here"
+  bio = "Hi! I am Lazy developer."
