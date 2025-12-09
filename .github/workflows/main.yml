@@ -18,6 +18,6 @@ jobs:
           # Branch to deploy to
           PAGES_BRANCH: gh-pages
           # Token for authentication (automatic token is enough)
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
           # Repository to deploy to
           REPOSITORY: LazyCode2/blog
