@@ -1,0 +1,262 @@
+<!doctype html>
+<html class="not-ready lg:text-base overflow-y-scroll scroll-pt-14 scheme-light dark:scheme-dark" lang="en">
+
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="generator" content="Zola v0.21.0" />
+  <title>Clean Code!</title>
+  <meta property="og:title" content="Clean Code!" />
+  <meta name="description" content="Write better code" />
+  <meta property="og:description" content="Write better code" />
+  <meta property="og:url" content="https://lazycode2.github.io/blog/blog/cleancode/" />
+  <link rel="canonical" href="https://lazycode2.github.io/blog/blog/cleancode/" />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2025-12-10T00:00:00+00:00" />
+  <meta property="article:tag" content="code" />
+  <meta property="article:tag" content="improvement" />
+  <!-- Begin Head inject -->
+  
+  <!-- End Head inject -->
+  <link rel="stylesheet" href="https://lazycode2.github.io/blog/main.min.css?h=a74dd0c65eed2d85f55f" />
+  <link rel="stylesheet" href="https://lazycode2.github.io/blog/icons.css?h=7dd5ab449fa840fc01e2" />
+  <style>:root{--bg: #f4f4f5; --header: #e4e4e7;} :root.dark{--bg: #18181b; --header: #27272a;}</style>
+  <meta name="theme-color" data-light="#e4e4e7" data-dark="#27272a" content="#e4e4e7" />
+  <link rel="icon" type="image/x-icon" href="https://lazycode2.github.io/blog/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="https://lazycode2.github.io/blog/apple-touch-icon.png?h=58bee300054c5308feb3" />
+  <link rel="icon" type="image/png" href="https://lazycode2.github.io/blog/android-icon.png?h=8d80ec95446bd2c36826" />
+  <script src="https://lazycode2.github.io/blog/js/zola-theme.min.js?h=26975b146d48e6ff41af"></script>
+  <!-- Begin Head End inject -->
+  
+  <!-- End Head End inject -->
+</head>
+
+<body class="text-black duration-100 ease-out dark:text-white">
+  <!-- Header -->
+<header class="header fixed top-0 z-40 mx-auto min-h-13 w-full">
+  <div class="mx-auto w-full max-w-4xl p-2.5 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center min-h-8 overflow-hidden">
+        <button type="button" title="Go to home page [Alt + !]" accesskey="!"
+          onclick="window.location.href='https://lazycode2.github.io/blog/';"
+          class="btn-home h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-home,url(icons/home.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Switch color scheme [Alt + $]" accesskey="$"
+          onclick="window.zolaTheme.color.toggle();"
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-btn-dark,url(icons/btn-dark.svg))]
+            dark:[background-image:var(--icons-btn-light,url(icons/btn-light.svg))] dark:invert"
+        ></button>
+        <button type="button" title="Open search [Alt + /]" accesskey="/"
+          onclick="window.zolaTheme.search.toggle();"
+          class="btn-search ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px]
+            bg-center bg-no-repeat bg-cover [background-image:var(--icons-search,url(icons/search.svg))] dark:invert"
+        ></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Begin Body Start inject -->
+  
+  <!-- End Body Start inject -->
+  <main class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg
+    relative mx-auto min-h-[calc(100vh-4rem)] max-w-3xl px-4 pt-28 lg:pt-32 pb-12 wrap-break-word">
+      <!-- Search -->
+<div id="linkita-search-wrapper" class="hidden">
+  <ul id="linkita-search-results"></ul>
+</div>
+<script>window.zolaTheme.search.init({ scripts: ["https://lazycode2.github.io/blog/elasticlunr.min.js", "https://lazycode2.github.io/blog/search_index.en.js"], arg: { w: "#linkita-search-wrapper", r: "#linkita-search-results" } });</script>
+
+    
+<article>
+  <!-- Begin Page Start inject -->
+  
+  <!-- End Page Start inject -->
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">Clean Code!</h1>
+    <!-- Page Info -->
+<div class="text-sm antialiased opacity-80"><time
+      datetime="2025-12-10T00:00:00+00:00">2025-12-10</time><span
+        class="middot"></span><time
+    datetime="PT0H2M0S">2&nbsp;min</time><span
+      class="middot"></span>
+</div>
+
+  </header>
+  <!-- TOC -->
+<nav class="block-bg prose-a:secondary-link mb-12 rounded-lg p-2 text-lg">
+  <details>
+    <summary class="select-none py-0.5 lg:py-1 pl-3.5" title="[Alt + =]" accesskey="=">
+      <span class="cursor-pointer ml-0.5">Table of Contents</span>
+    </summary>
+    <ul class="ps-8">
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#how-to-write-better-code">How to write better code?</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#1-keep-functions-small-and-single-purpose">1. Keep functions small and single-purpose</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#2-use-clear-intention-revealing-names">2. Use clear, intention-revealing names</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#3-make-few-comments-and-explain-why-rather-than-what">3. Make few comments and explain why rather than what</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#4-reduce-nesting-return-early">4. Reduce nesting; return early</a>
+      </li>
+      <li class="ps-0.5">
+        <a class="no-underline hover:underline" href="#5-handle-errors-clearly">5. Handle errors clearly</a>
+      </li>
+    </ul>
+  </details>
+</nav>
+
+  <!-- Content -->
+  <section><h2 id="how-to-write-better-code">How to write better code?</h2>
+<p>Code which is easy to read, understand, and modify is considered good. It's habit, not magic. The list below is a collection of simple, practical habits you can start today🚀</p>
+<hr />
+<h2 id="1-keep-functions-small-and-single-purpose">1. Keep functions small and single-purpose</h2>
+<p>A function should perform a single task effectively. A function is most likely the appropriate size if it can be summed up in one brief sentence.</p>
+<p><strong>Why</strong>: small functions are easier to test, reason about, and reuse.</p>
+<p><strong>Bad (too big)</strong>:</p>
+<pre data-lang="go" style="background-color:#2b303b;color:#c0c5ce;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">ProcessOrder</span><span>(</span><span style="color:#bf616a;">o </span><span style="color:#b48ead;">Order</span><span>) </span><span style="color:#b48ead;">error </span><span>{
+</span><span>    </span><span style="color:#65737e;">// validate order
+</span><span>    </span><span style="color:#65737e;">// calculate shipping
+</span><span>    </span><span style="color:#65737e;">// charge credit card
+</span><span>    </span><span style="color:#65737e;">// save to db
+</span><span>    </span><span style="color:#65737e;">// send confirmation email
+</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#d08770;">nil
+</span><span>}
+</span></code></pre>
+<p><strong>Good (split responsibilities)</strong>:</p>
+<pre data-lang="go" style="background-color:#2b303b;color:#c0c5ce;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">ProcessOrder</span><span>(</span><span style="color:#bf616a;">o </span><span style="color:#b48ead;">Order</span><span>) </span><span style="color:#b48ead;">error </span><span>{
+</span><span>    </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">err </span><span>:= </span><span style="color:#bf616a;">validateOrder</span><span>(</span><span style="color:#bf616a;">o</span><span>); </span><span style="color:#bf616a;">err </span><span>!= </span><span style="color:#d08770;">nil </span><span>{ </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">err </span><span>}
+</span><span>    </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">err </span><span>:= </span><span style="color:#bf616a;">chargePayment</span><span>(</span><span style="color:#bf616a;">o</span><span>); </span><span style="color:#bf616a;">err </span><span>!= </span><span style="color:#d08770;">nil </span><span>{ </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">err </span><span>}
+</span><span>    </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">err </span><span>:= </span><span style="color:#bf616a;">saveOrder</span><span>(</span><span style="color:#bf616a;">o</span><span>); </span><span style="color:#bf616a;">err </span><span>!= </span><span style="color:#d08770;">nil </span><span>{ </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">err </span><span>}
+</span><span>    </span><span style="color:#b48ead;">go </span><span style="color:#bf616a;">sendConfirmationEmail</span><span>(</span><span style="color:#bf616a;">o</span><span>) </span><span style="color:#65737e;">// async
+</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#d08770;">nil
+</span><span>}
+</span></code></pre>
+<p>Each helper (<code>validateOrder</code>, <code>chargePayment</code>, <code>saveOrder</code>) have it's own responsibilities</p>
+<h2 id="2-use-clear-intention-revealing-names">2. Use clear, intention-revealing names</h2>
+<p>Names are the primary documentation. Choose names that describe what and why, not how.</p>
+<p>Function names: verbs or verb phrases (<code>CalculateTax</code>, <code>FetchUser</code>).</p>
+<p>Variable names: meaningful nouns (<code>userCount</code>, <code>isAdmin</code>).</p>
+<p>Types: nouns (<code>Order</code>, <code>PaymentProcessor</code>).</p>
+<p>Avoid abbreviations (num is okay, but usrCnt is not).</p>
+<p><strong>Bad</strong>:</p>
+<pre data-lang="go" style="background-color:#2b303b;color:#c0c5ce;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#bf616a;">a </span><span>:= </span><span style="color:#d08770;">5
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">p</span><span>(</span><span style="color:#bf616a;">u </span><span style="color:#b48ead;">User</span><span>) { /</span><span style="color:#bf616a;">_</span><span>...</span><span style="color:#bf616a;">_</span><span>/ }
+</span></code></pre>
+<p><strong>Good</strong>:</p>
+<pre data-lang="go" style="background-color:#2b303b;color:#c0c5ce;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#bf616a;">retryCount </span><span>:= </span><span style="color:#d08770;">5
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">processUserSignup</span><span>(</span><span style="color:#bf616a;">user </span><span style="color:#b48ead;">User</span><span>) { /</span><span style="color:#bf616a;">_</span><span>...</span><span style="color:#bf616a;">_</span><span>/ }
+</span></code></pre>
+<h2 id="3-make-few-comments-and-explain-why-rather-than-what">3. Make few comments and explain why rather than what</h2>
+<p>Code need to demonstrate its actions. Comments are made for non-obvious, specific, and logical reasons.</p>
+<p>Bad comment (redundant):</p>
+<pre data-lang="go" style="background-color:#2b303b;color:#c0c5ce;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#65737e;">// increment i
+</span><span style="color:#bf616a;">i</span><span>++
+</span></code></pre>
+<p>Good comment (explains why):</p>
+<pre data-lang="go" style="background-color:#2b303b;color:#c0c5ce;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#65737e;">// Allow 2 extra seconds because the external service may delay during peak hours.
+</span><span style="color:#bf616a;">time</span><span>.</span><span style="color:#bf616a;">Sleep</span><span>(</span><span style="color:#d08770;">2</span><span> \* </span><span style="color:#bf616a;">time</span><span>.</span><span style="color:#bf616a;">Second</span><span>)
+</span></code></pre>
+<h2 id="4-reduce-nesting-return-early">4. Reduce nesting; return early</h2>
+<p>Deep nesting makes logic hard to follow. Use early returns to keep the "happy path" less indented.</p>
+<p><strong>Bad</strong>:</p>
+<pre data-lang="go" style="background-color:#2b303b;color:#c0c5ce;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#b48ead;">if </span><span style="color:#bf616a;">cond1 </span><span>{
+</span><span>    </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">cond2 </span><span>{
+</span><span>        </span><span style="color:#65737e;">// do stuff
+</span><span>    } </span><span style="color:#b48ead;">else </span><span>{
+</span><span>        </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">err
+</span><span>    }
+</span><span>} </span><span style="color:#b48ead;">else </span><span>{
+</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">err
+</span><span>}
+</span></code></pre>
+<p><strong>Good</strong>:</p>
+<pre data-lang="go" style="background-color:#2b303b;color:#c0c5ce;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#b48ead;">if </span><span>!</span><span style="color:#bf616a;">cond1 </span><span>{ </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">err </span><span>}
+</span><span style="color:#b48ead;">if </span><span>!</span><span style="color:#bf616a;">cond2 </span><span>{ </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">err </span><span>}
+</span><span style="color:#65737e;">// do stuff
+</span></code></pre>
+<h2 id="5-handle-errors-clearly">5. Handle errors clearly</h2>
+<p>Handle or wrap them with context so the caller knows what failed.</p>
+<pre data-lang="go" style="background-color:#2b303b;color:#c0c5ce;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#b48ead;">if </span><span style="color:#bf616a;">err </span><span>:= </span><span style="color:#bf616a;">db</span><span>.</span><span style="color:#bf616a;">Save</span><span>(</span><span style="color:#bf616a;">user</span><span>); </span><span style="color:#bf616a;">err </span><span>!= </span><span style="color:#d08770;">nil </span><span>{
+</span><span>	</span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">fmt</span><span>.</span><span style="color:#bf616a;">Errorf</span><span>(&quot;</span><span style="color:#a3be8c;">save user </span><span style="color:#d08770;">%s</span><span style="color:#a3be8c;">: </span><span style="color:#d08770;">%w</span><span>&quot;, </span><span style="color:#bf616a;">user</span><span>.</span><span style="color:#bf616a;">ID</span><span>, </span><span style="color:#bf616a;">err</span><span>)
+</span><span>}
+</span></code></pre>
+<hr />
+<p>Clean code is a skill you continually improve on each time you write, break, or refactor something; it's not something you master once and can brag about forever. I'm still learning, and to be honest, half of clean code is just clearing up the mess your former self caused.</p>
+<p><strong><em>Robert C. Martin's book Clean Code</em></strong> is a must-read if you are interested in going deeper; it's essentially the manual for writing code that won't give you nightmares in the future.</p>
+<p>Please don't hesitate to contact me, have a conversation, or roast my code.
+<code>the_lazy_fool</code> on Discord</p>
+</section>
+  <hr />
+  <!-- Post Taxonomies -->
+<footer class="mt-12 flex flex-col" tabindex="-1" accesskey="_">
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mr-1.5 mb-1.5 rounded-lg px-5 py-1.5">Categories</span>
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://lazycode2.github.io/blog/categories/coding/">coding</a>
+    
+  </div>
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mr-1.5 mb-1.5 rounded-lg px-5 py-1.5">Tags</span>
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://lazycode2.github.io/blog/tags/code/">code</a>
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://lazycode2.github.io/blog/tags/improvement/">improvement</a>
+    
+  </div>
+</footer>
+
+  <!-- Post Nav -->
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https://lazycode2.github.io/blog/blog/welcome/" accesskey="."
+    ><span>WELCOME!</span><span class="ml-1.5">&#8250;</span></a>
+</nav>
+
+  <!-- Begin Page End inject -->
+  
+  <!-- End Page End inject -->
+</article>
+
+  </main>
+  <!-- Footer -->
+<footer class="mx-auto flex lg:mt-5 max-w-3xl flex-wrap items-center px-4 py-3 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+  © <time datetime="2025">2025</time>
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <span class="mr-6 lg:ml-6">
+      <a class="link" href="https://www.getzola.org/" target="_blank">Powered by Zola</a>
+    </span>
+    <a class="link" href="https://www.getzola.org/themes/linkita/" target="_blank">&#9998; Linkita</a>
+  </div>
+  <!-- Begin Footer inject -->
+  
+  <!-- End Footer inject -->
+</footer>
+
+  
+
+  <!-- Begin Body End inject -->
+  
+  <!-- End Body End inject -->
+</body>
+
+</html>
